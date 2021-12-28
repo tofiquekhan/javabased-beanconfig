@@ -8,14 +8,25 @@ import myproject.javabased.beans.WelcomeBean;
 
 @Configuration
 public class AppConfig {
+	
+	static {
+		System.out.println("AppConfig class Loading.........");
+	}
 
+	public AppConfig() {
+		System.out.println("AppConfig class Instantiation......");
+	}
 	@Bean
 	public WelcomeBean welcomeBean() {
-		return new WelcomeBean();
+		WelcomeBean welcomeBean = new WelcomeBean();
+		welcomeBean.setName("Tofique Ahmed Khan");
+		return welcomeBean;
 	}
 	
 	@Bean
 	public HelloBean helloBean() {
-		return new HelloBean();
+		HelloBean helloBean = new HelloBean();
+		helloBean.setName("Tofique Ahmed Khan");
+		return helloBean;
 	}
 }
