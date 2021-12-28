@@ -10,7 +10,9 @@ public class Test {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		WelcomeBean welcomeBean = (WelcomeBean) context.getBean("welcomeBean");
-		System.out.println(welcomeBean.getWelcomeMessage());
+		WelcomeBean welcomeBean1 = (WelcomeBean) context.getBean("welcomeBean");
+		System.out.println(welcomeBean1.getWelcomeMessage());
+		WelcomeBean welcomeBean2 = (WelcomeBean) context.getBean(WelcomeBean.class);
+		System.out.println(welcomeBean2.getWelcomeMessage());
 	}
 }
